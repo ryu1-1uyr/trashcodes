@@ -1,0 +1,1 @@
+console.log((_=()=>('puts(%[<?php echo( ]+%(console.log((_='+_+')())).inspect+%[)?>])'))())
