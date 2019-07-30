@@ -19,19 +19,19 @@ const bfeval = (code) => {
     array = [... new Array(code.length).keys()]
     idx = 0 
     output = []
-    sampleOutput = `array = [... new Array(${code.length}).keys()];idx = 0;output = [];`
+    sampleOutput = `array = [... new Array(${code.length}).fill(0)];idx = 0;output = [];`
     // code.replace(/[\[\].,><+-]/)
     input = [... code].map(x => {
         // console.log(x)
         switch (x) {
             case '[':
-                sampleOutput+=('while(array[idx] != 0){console.log(array[idx] , 0);')
+                sampleOutput+=('while(array[idx] != 0){console.log(array[idx] , idx);')
                 break
             case ']':
                 sampleOutput+=('};')
                 break
             case '.':
-                sampleOutput+=('output.join(array[idx]);console.log( (array[idx]-[]) );')
+                sampleOutput+=('output.join(array[idx]);console.log( (array[idx]-[]),array );')
                 break
             case ',':
                 sampleOutput+=(`array[idx] = ${x};`)
@@ -43,7 +43,7 @@ const bfeval = (code) => {
                 sampleOutput+=('array[idx] = (array[idx]-[]) - 1;')
                 break
             case '>':
-                sampleOutput+=('idx+=1;')
+                sampleOutput+=('idx+=1;console.log(idx);')
                 break
             case '<':
                 sampleOutput+=('idx-=1;')
@@ -51,8 +51,8 @@ const bfeval = (code) => {
             default:
 
         }
-        // console.log(sampleOutput)
     })
     return sampleOutput
 }
-console.log(bfeval('+++++++++[>++++++++>+++++++++++>+++>+<<<<-]>.>++.+++++++..+++.>+++++.<<+++++++++++++++.>.+++.------.--------.>+.>+.'))
+
+console.log(bfeval('++++++++[>+++++<-]>.'))
