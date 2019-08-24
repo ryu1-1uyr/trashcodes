@@ -5,19 +5,8 @@
     let output = '';
   
     //main code
-  
     for (const input of inputs) {
-      //使える文字なら => 置き換える
-      
       asciiCodes.push(input.charCodeAt().toString() -[])
-      
-    //   for (let o = 0 ; o < input.charCodeAt().toString() -[] ; o++){
-    //       output += '+'
-    //     }
-        
-    //     output += '.'
-
-  
     }
 
     let nowhere = 0
@@ -38,6 +27,5 @@
         nowhere = asciiCode -[]
     }
   
-    console.log(asciiCodes);
     console.log(output)
   })(require("fs").readFileSync("/dev/stdin", "utf8"));

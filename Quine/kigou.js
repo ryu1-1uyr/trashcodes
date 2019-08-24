@@ -71,6 +71,8 @@
         output.push(utf8code);
       }
     }
-  
-    console.log(blackConstructor, output.join("+"));
+
+    let replacedElement = output.join('+').split('__').join("-~-~-~[]").split('_').join('[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+[...{}+[]][-~[]]+([][\'\']+[])[-~[]]+(([]==[])+[])[(-~-~[-~[]])]+(-~[]/[]+[])[(-~-~[-~[]]+-~-~[-~[]])]+(!![]+[])[-~[]]+([][\'\']+[])[+[]]+[...{}+[]][(-~-~[-~[]]+-~-~[-~[]])- -~[]]+(!![]+[])[+[]]+[...{}+[]][-~[]]+(!![]+[])[-~[]]')
+
+    console.log('console.log('+replacedElement+')');
   })(require("fs").readFileSync("/dev/stdin", "utf8"));
