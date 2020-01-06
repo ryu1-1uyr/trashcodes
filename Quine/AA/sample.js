@@ -16,6 +16,7 @@
 
 横幅102の縦27
 
+setINtervalの使用を理解して30FPSくらいでアニメーションさせるとよさそう
 */
 // console["log"]((_=()=>{let a = 1;return a + 'console["log"]((_='+_+')())'})())
 
