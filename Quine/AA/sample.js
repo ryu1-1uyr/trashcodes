@@ -121,6 +121,7 @@ setINtervalの使用を理解して30FPSくらいでアニメーションさせ�
 // }
 let counter = 0
 let str = ''
+let flag = true 
 const clearNumber = setInterval(() => {
 
 // for (let o = 0 ; o < 31 ; o++) {
@@ -135,12 +136,28 @@ const clearNumber = setInterval(() => {
 
 let leng = counter % 10
 
-// console.log(leng)
-for (let i = 0;i < leng + 1 ;i++) {
-  str += '>'
+if (flag) {
+  for (let i = 0;i < leng + 1 ;i++) {
+    str += '>'
+  }
+
+  if (leng === 9){
+    flag = false
+  }
+  console.log( str + leng )
+} else {
+
+  for (let i = 10 - leng ; i > 0 ; i--) {
+    // console.log(i)
+    str += '>'
+  }
+  if (leng === 9){
+    flag = true
+  }
+  console.log( str + leng )
 }
 
-console.log( str + leng )
+// console.log( str + leng )
 str = ''
 
 // if(counter % 10 ) {}
